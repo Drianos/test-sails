@@ -37,7 +37,7 @@ module.exports.routes = {
   },
   'get /pir1': 'SensorsController.getPir',
   'get /pir2': 'SensorsController.getPir',
-  '/led_on': 'ActuatorsController.turnOnLed',
+  '/led_on/:intensity': 'ActuatorsController.turnOnLed',
   '/led_off': 'ActuatorsController.turnOffLed' 
 
   /***************************************************************************
