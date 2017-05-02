@@ -18,7 +18,8 @@ module.exports = {
     	client.destroy();
     });
 
-     return res.send('On Led');
+     //return res.send('On Led');
+     return;
   },
   turnOffLed : function(req, res)
   {
@@ -29,6 +30,7 @@ module.exports = {
     	client.write('d');
     	client.destroy();
     });
-     return res.send('Off Led');
+     //return res.send('Off Led');
+     return;
   }
 }
