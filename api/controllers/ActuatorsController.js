@@ -12,7 +12,7 @@ var five = require("johnny-five");
 
 var EtherPort = require("etherport");
 var board = new five.Board({
-  port: new EtherPort(3030)
+  port: new EtherPort(3030),timeout: 3600 
 });
 
 board.on("ready", function() {
