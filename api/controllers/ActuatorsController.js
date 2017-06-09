@@ -9,12 +9,16 @@ var net = require('net');
 var VirtualSerialPort = require('udp-serial').SerialPort;
 var firmata = require('firmata');
 var five = require("johnny-five");
-var sp = new VirtualSerialPort({
-  host: '192.168.0.117' //make sure to change the ip(use 192.168.4.1 if you are using ESP8266 as Access Point)
+
+var EtherPort = require("etherport");
+var board = new five.Board({
+  port: new EtherPort(1337)
 });
 
-var ioboard = new firmata.Board(sp);
-var board = new five.Board({io: ioboard, repl: true});
+board.on("ready", function() {
+  console.log('board ready');
+});
+
 
 
 module.exports = {
